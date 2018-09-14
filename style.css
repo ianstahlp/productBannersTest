@@ -41,6 +41,14 @@ body {
     color: #3651a3;
 }
 
+.main-container:nth-child(1) {
+    order: 2;
+}
+
+.main-container:nth-child(2) {
+    order: 1;
+}
+
 
 /* HOVER CONTAINER */
 
@@ -65,7 +73,7 @@ body {
 
 /* 3 Head Banner */
 
-.main-container:nth-child(3) .head-banner {
+.main-container:nth-child(1) .head-banner {
     display: flex;
     justify-content: center;
     font-size: 2rem;
@@ -113,7 +121,8 @@ body {
     box-sizing: border-box
 }
 
-.supply {
+.supply,
+.shipping {
     font-size: 1.5rem;
 }
 
@@ -172,11 +181,11 @@ img {
 
 /* 3rd Body Banner */
 
-.main-container:nth-child(3) #strike {
+.main-container:nth-child(1) #strike {
     visibility: hidden;
 }
 
-.main-container:nth-child(3) .after-line-break {
+.main-container:nth-child(1) .after-line-break {
     visibility: hidden;
 }
 
@@ -189,7 +198,10 @@ img {
     }
 }
 
-@media only screen and (max-width: 768px) {
+
+/* Mobile View */
+
+@media only screen and (max-width: 481px) {
     body {
         display: block;
         flex-wrap: wrap;
@@ -198,5 +210,22 @@ img {
     .main-container {
         width: 100%;
         margin: 0;
+    }
+    .main-container:nth-child(odd) .head-banner {
+        top: 10px;
+        text-align: center;
+        background: url('../assets/Mobile_Triangle_Closed@2x.png') no-repeat -30%, linear-gradient(0deg, #F0F2F9 4%, #FFFFFF 100%);
+        border-bottom: none;
+        color: #3651a3;
+    }
+    .main-container:nth-child(odd) .body-banner {
+        display: none;
+    }
+    .main-container:nth-child(1)>.body-banner {
+        display: none;
+    }
+    img {
+        width: 4rem;
+        height: 4.5rem;
     }
 }
